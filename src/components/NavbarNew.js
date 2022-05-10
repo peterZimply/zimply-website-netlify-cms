@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/Navbar.css'
+import '../styles/navbar.css'
 import '../styles/navbarNew.css'
 import { IntlContextConsumer, Link, changeLocale, FormattedMessage } from "gatsby-plugin-intl";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
