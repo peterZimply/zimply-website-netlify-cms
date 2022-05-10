@@ -9,11 +9,15 @@ import SectionBreak from "../components/SectionBreak"
 import TrustedAICard from "../components/TrustedAICard"
 import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
 import NavbarNew from "../components/NavbarNew";
-import Hero2 from "../components/Hero2"
+import Hero2 from "../components/Hero2";
+//import Carousel from "../components/Carousel";
+import Layout from "../components/Layout2"
+import Image from "../components/Image"
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
+  zimplyLogoText,
   title,
   heading,
   subheading,
@@ -23,22 +27,25 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
 
+  const intl = useIntl();
+  var currentLocale = intl.locale;
+
+  console.log(heroImage);
+  console.log(heroImage.images.fallback.src);
+
   return (
-    <div style={{height: '1000px'}}>
+    <div>
       <NavbarNew />
 
       <Spring
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}>
-        {props => <div style={props}><Hero2 /></div>}
+        {props => <div style={props}><Hero2 heroImage={heroImage} title={title}/></div>}
       </Spring>
 
       {/* BODY CONTENT */}
-      <div className="sectionBlock homeSection01">
-        <SectionTitle text={<FormattedMessage
-          id="title1"
-          defaultMessage="Möt våra digitala assistenter"
-        />} />
+      {/*<div className="sectionBlock homeSection01">
+        <SectionTitle text={title} />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Spring
             from={{ opacity: 0 }}
@@ -63,7 +70,7 @@ export const IndexPageTemplate = ({
 
         <TrustedAICard />
 
-      </div>
+  </div>*/}
 
     </div>
     /*<div>

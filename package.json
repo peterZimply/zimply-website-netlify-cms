@@ -33,6 +33,7 @@
     "netlify-cms-media-library-uploadcare": "^0.5.10",
     "prop-types": "^15.8.1",
     "react": "^17.0.0",
+    "react-alice-carousel": "^2.6.0",
     "react-cookie-consent": "^7.4.1",
     "react-dom": "^17.0.0",
     "react-helmet": "^6.0.0",

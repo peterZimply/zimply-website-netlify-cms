@@ -320,8 +320,8 @@
     justify-content: center;
     align-items: center;
     height: 750px;
-    background-color: black;
-    background-image: url('/images/homeHero.jpg');
+    /*background-color: black;
+    background-image: url('/images/homeHero.jpg');*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

@@ -31,16 +31,17 @@ const content = [
     }
 ];
 
-export default () => (
+export default (props) => (
     <div
         className="hero-wrapper"
+        style={{backgroundImage: `url(${props.heroImage.images.fallback.src})`}}
     >
         <div style={{ position: 'absolute', width: '100%' }}>
             {/*<ParticlesWhite2 style={{ width: '100vw', height: '100%' }} />*/}
             {/*<ParticleBubbles style={{width: '100vw', height: '100%'}}/>*/}
         </div>
 
-        <div className="inner-hero-content">
+        <div className="inner-hero-content" >
             <div className={css`
                     width: 420px;
                     display: flex;
@@ -59,7 +60,6 @@ export default () => (
                         src="/images/logos/zimply-text-white.svg"
                         alt="logo"
                         width="160"
-
                     />
                 </Fade>
 
