@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-
-import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
+import { Spring } from 'react-spring/renderprops';
+import SectionTitle from "../components/SectionTitle"
+import Section from "../components/Section"
+import SectionBreak from "../components/SectionBreak"
+import TrustedAICard from "../components/TrustedAICard"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
+import NavbarNew from "../components/NavbarNew";
+import Hero2 from "../components/Hero2"
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -21,7 +24,49 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(image) || image;
 
   return (
-    <div>
+    <div style={{height: '1000px'}}>
+      <NavbarNew />
+
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}>
+        {props => <div style={props}><Hero2 /></div>}
+      </Spring>
+
+      {/* BODY CONTENT */}
+      <div className="sectionBlock homeSection01">
+        <SectionTitle text={<FormattedMessage
+          id="title1"
+          defaultMessage="Möt våra digitala assistenter"
+        />} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Spring
+            from={{ opacity: 0 }}
+            to={{ opacity: 1 }}>
+            {props => <div style={props}><Carousel /></div>}
+          </Spring>
+        </div>
+
+        <SectionBreak />
+
+
+        <div className="movie-container" >
+          <iframe
+            src={currentLocale === "sv" ? "https://player.vimeo.com/video/598856380?h=cff3e9c2b0&title=0&byline=0&portrait=0" : "https://player.vimeo.com/video/598866568?h=ba0b099060"}
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <TrustedAICard />
+
+      </div>
+
+    </div>
+    /*<div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
@@ -70,7 +115,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </section>
-    </div>
+    </div>*/
   );
 };
 

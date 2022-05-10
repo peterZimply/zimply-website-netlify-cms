@@ -74,6 +74,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `sv`],
+        // language file path
+        defaultLanguage: `sv`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop

@@ -1,0 +1,224 @@
+
+.fade {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
+}
+
+.appear-animation {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.navbar {
+    padding: 0 50px;
+}
+
+.nav-link {
+    color: white;
+    position: relative;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 20px;
+    letter-spacing: -0.6px;
+    /*transition: all ease 200ms;*/
+}
+
+.nav-link:hover > .dropdown-wrapper {
+    visibility: visible;
+    opacity: 1;
+    transition: all ease 400ms;
+    transform: translateX(0%) translateY(10px);
+}
+
+.nav-link:hover > .dropdown-arrow {
+    transition: all ease 400ms;
+    transform: rotate(-180deg);
+}
+
+.nav-link:hover > .dropdown-wrapper > .dropdown ul li {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all ease 800ms;
+}
+
+.dropdown-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease 400ms;
+    transform: translateX(0%) translateY(30px);
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: auto;
+    height: auto;
+    
+}
+
+.dropdown {
+    width: 220px;
+    margin-top: 50px;
+    background: white;
+    border-top: 5px solid #d6bc3f;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: rgba(46, 41, 51, 0.08) 0px 7px 19px 11px;
+}
+.dropdown ul {
+    list-style-type: none;
+}
+.dropdown ul li {
+    padding: 15px;
+    opacity: 0;
+    transform: translateX(10%);
+    margin-bottom: 0;
+    transition: all ease 400ms;
+}
+.dropdown ul li:hover > .dropdown-link {
+    margin-left: 15px;
+    transition: all ease 400ms;
+}
+
+.dropdown-link {
+    color: black;
+    text-decoration: none;
+    transition: all ease 400ms;
+}
+
+.dropdown-arrow {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 13px;
+    transition: all ease 400ms;
+}
+
+.mobile-dropdown-arrow {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 13px;
+    transition: all ease 400ms;
+}
+
+
+.middle-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-nav-container {
+    width: 200px;
+}
+
+.right-nav-container {
+    display: block;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo-nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 40px;
+    outline: none;
+    z-index: 1;
+    border: 3px solid white;
+    background: none;
+}
+.demo-nav-button:hover {
+    background: white;
+    color: var(--darkgray);
+    transition: all ease 400ms;
+}
+.demo-nav-button p {
+    margin: 0;
+}
+.dark-mode-demo-button {
+    color: var(--darkgray);
+    border: 3px solid rgb(78, 78, 78);
+}
+
+.language-button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    margin: 0 20px;
+}
+.language-button:hover {
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+.dark-mode {
+    color: var(--darkgray);
+}
+
+@media (max-width: 1400px) {
+    .nav-link {
+        font-size: 16px;
+    }
+    .left-nav-container {
+        width: auto;
+    }
+}
+
+@media (max-width: 1230px) {
+    .middle-nav-container {
+        display:none;
+    }
+    .right-nav-container {
+        display:none;
+    }
+    .nav-link {
+        font-family: 'Avenir';
+        font-size: 26px;
+        font-weight: 700;
+        margin: 10px;
+        letter-spacing: -0.6px;
+        animation: 1s ease-out 0s 1 animationScale;
+        text-align: center;
+    }
+    .hamburger {
+        display: block;
+    }
+    .dropdown-wrapper {
+        transform: translate(50%, 10px);
+        right: 50%;
+        left: auto;
+        z-index: 3;
+    }
+    .nav-link:hover > .dropdown-wrapper {
+        transform: translate(50%, 10px);
+        right: 50%;
+        left: auto;
+    }
+    .navbar {
+        padding: 0 30px;
+    }
+    .language-button{
+        font-family: 'Avenir';
+        margin-top: 20px;
+        font-size: 26px;
+    }
+  }

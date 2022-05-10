@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('Avenir-Black.eot');
+    src: url('Avenir-Black.eot?#iefix') format('embedded-opentype'),
+        url('Avenir-Black.woff2') format('woff2'),
+        url('Avenir-Black.woff') format('woff'),
+        url('Avenir-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+

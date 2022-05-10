@@ -1,115 +1,99 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { css } from '@emotion/css'
+import { Link } from 'gatsby'
+import { FormattedMessage } from "gatsby-plugin-intl";
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
+const Title = (props) => {
+  return <h2 style={{ color: 'var(--blue)', marginBottom: '30px', fontSize: '1.5em' }}>{props.text}</h2>
+}
 
-const Footer = class extends React.Component {
-  render() {
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
+const Text = (props) => {
+  return <h2 style={{ color: 'var(--white)', fontWeight: 'lighter', fontSize: '1.5em' }}>{props.text}</h2>
+}
+
+const ColumnWrapper = (props) => {
+  return <div
+
+    className={css`
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        @media (max-width: 570px) {
+          align-items: center;
+        }
+    `}>
+    {props.children}
+  </div>
+}
+
+export default () => (
+  <footer style={{
+    padding: '8rem 2rem',
+    display: 'flex',
+    justifyContent: 'center',
+    background: `var(--secondary)`,
+    fontSize: '1.2rem',
+    color: `var(--white)`,
+    height: 'auto',
+    zIndex: 2
+  }}>
+    <div
+      className={css`
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 800px;   
+        @media (max-width: 570px) {
+          width: auto;   
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+        }
+    `}
+    >
+      <ColumnWrapper>
+        <Title text="ZIMPLY INNOVATION" />
+        <Text text="Stockholm" />
+        <Text text="Linnégatan 87 A" />
+        <Text text="115 23 Stockholm" />
+        <br />
+        <Text text="Göteborg" />
+        <Text text="Jons väg 21" />
+        <Text text="433 75 Jonsered" />
+      </ColumnWrapper>
+
+      <ColumnWrapper>
+        <Title text={<FormattedMessage
+          id="footer01"
+          defaultMessage="KONTAKT"
+        />} />
+        <Text text="Zimply Innovation" />
+        <Text text="08 122 09 339" />
+        <a href="mailto:hello@zimply.ai"><Text text="hello@zimply.ai" /></a>
+      </ColumnWrapper>
+
+      <ColumnWrapper>
+        <Title text={<FormattedMessage
+          id="footer02"
+          defaultMessage="SOCIALT"
+        />} />
+        <div>
+          <a href="https://www.facebook.com/zimplyinnovation" target="_blank"><img src="/images/social/FB.png" alt="customer" width="16px" style={{ marginRight: '15px' }} /></a>
+          <a href="https://www.linkedin.com/company/zimply-innovation/" target="_blank"><img src="/images/social/linkdin.png" alt="customer" width="30px" style={{ marginRight: '15px' }} /></a>
+          <a href="https://www.instagram.com/zimplyinnovation/" target="_blank"><img src="/images/social/instagram.png" alt="customer" width="28px" style={{ marginRight: '15px' }} /></a>
+        </div>
+      </ColumnWrapper>
+
+      <ColumnWrapper>
+        <Link to="/">
           <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
+            src="/images/logos/zimply-logo-text-white.svg"
+            alt="logo"
+            width="100"
           />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-};
-
-export default Footer;
+        </Link>
+      </ColumnWrapper>
+    </div>
+  </footer>
+)
