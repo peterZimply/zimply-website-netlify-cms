@@ -17,7 +17,8 @@ import Image from "../components/Image"
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
-  zimplyLogoText,
+  logo,
+  brand,
   title,
   heading,
   subheading,
@@ -26,12 +27,11 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImage = getImage(image) || image;
+  const zimplyLogo = getImage(logo) || logo;
+  const zimplyLogoText = getImage(brand) || brand;
 
   const intl = useIntl();
   var currentLocale = intl.locale;
-
-  console.log(heroImage);
-  console.log(heroImage.images.fallback.src);
 
   return (
     <div>
@@ -128,6 +128,8 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  brand: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -145,6 +147,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        logo={frontmatter.logo}
+        brand={frontmatter.brand}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
@@ -174,6 +178,16 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        logo {
+          childImageSharp {
+            gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+          }
+        }
+        brand {
+          childImageSharp {
+            gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
           }
         }
         heading
