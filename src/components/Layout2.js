@@ -13,7 +13,7 @@
  import Footer from "../components/Footer"
  
  import 'modern-normalize/modern-normalize.css'
- import '../styles/globalStyles.css'
+ import '../globalStyles.css'
  import '../styles/keyframes.css'
  //import CookieBot from "react-cookiebot"
  import CookieConsent, { Cookies } from "react-cookie-consent";

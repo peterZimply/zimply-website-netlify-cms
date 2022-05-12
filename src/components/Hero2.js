@@ -34,7 +34,7 @@ const content = [
 export default (props) => (
     <div
         className="hero-wrapper"
-        style={{backgroundImage: `url(${props.heroImage.images.fallback.src})`}}
+        style={{backgroundImage: `url(${props.heroBg.images.fallback.src})`}}
     >
         <div style={{ position: 'absolute', width: '100%' }}>
             {/*<ParticlesWhite2 style={{ width: '100vw', height: '100%' }} />*/}
@@ -57,10 +57,10 @@ export default (props) => (
             >
                 <Fade bottom duration={2000} delay={200} distance="30px">
                     <img
-                        src="/images/logos/zimply-text-white.svg"
+                        src={props.zimplyBrand.images.fallback.src} //"/images/logos/zimply-text-white.svg"
                         alt="logo"
                         width="160"
-                    />
+                />
                 </Fade>
 
                 <h1
@@ -94,15 +94,19 @@ export default (props) => (
                     font-size: 2rem;
                 }
             `}>
-                    <FormattedMessage
+                
+                    {props.heroText}
+
+                    {/*<FormattedMessage
                         id="heroText"
                         defaultMessage="Låt våra digitala assistenter hjälpa er när ni inte hinner med!"
-                    /></h1>
+            />*/}</h1>
             </Fade>
-            <MainButton to="/digitalassistants" text={<FormattedMessage
+            <MainButton to="/digitalassistants" text={props.heroButtonText} />
+            {/*<MainButton to="/digitalassistants" text={<FormattedMessage
                 id="ourassistants"
                 defaultMessage="Våra assistenter"
-            />} />
+            />} />*/}
         </div>
 
     </div>

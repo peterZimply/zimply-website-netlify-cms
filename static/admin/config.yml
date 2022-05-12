@@ -37,7 +37,7 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/index.md"
-        label: "Landing Page"
+        label: "Home"
         name: "index"
         fields:
           - {
@@ -46,21 +46,48 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+
           - {
-              label: Mainpitch,
-              name: mainpitch,
+              label: Hero,
+              name: hero,
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
+                  {
+                    label: Hero background,
+                    name: heroBackground,
+                    widget: image,
+                  },
+                  { label: Brand, name: brand, widget: image },
+                  {
+                    label: Text rotator,
+                    name: textRotator,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Text1, name: text1, widget: string },
+                        { label: Text2, name: text2, widget: string },
+                        { label: Text3, name: text3, widget: string },
+                      ],
+                  },
+                  { label: Hero text, name: heroText, widget: string },
+                  { label: Button text, name: heroButtonText, widget: string },
                 ],
             }
-          - { label: Description, name: description, widget: string }
+
+          - {
+              label: Video Section,
+              name: videoSection,
+              widget: object,
+              fields:
+                [
+                  { label: Video url, name: videoUrl, widget: string },
+                  { label: Title, name: title, widget: string },
+                  { label: Text, name: text, widget: text },
+                  { label: Button text, name: buttonText, widget: string },
+                ],
+            }
+
           - {
               label: Intro,
               name: intro,
@@ -77,46 +104,6 @@ collections:
                       [
                         { label: Image, name: image, widget: image },
                         { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
                       ],
                   },
                 ],
