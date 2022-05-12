@@ -1,5 +1,10 @@
 ---
 templateKey: index-page
+hero:
+  heroBackground: /img/homehero.jpg
+  brand: /img/zimply-text-white.png
+  heroText: Automatisera med digitala assistenter. Få bort tidskrävande arbetsuppgifter
+  heroButtonText: Skapa din assistent
 title: Låt våra digitala assistenter hjälpa er när ni inte hinner med!
 image: /img/homehero.jpg
 logo: /img/zimply-logo-color.png
