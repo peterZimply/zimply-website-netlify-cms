@@ -3,7 +3,7 @@ templateKey: index-page
 title: Great coffee with a conscience
 image: /img/flavor_wheel.jpg
 logo: /img/coffee-gear.png
-brand: /img/favicon-32x32.png
+brand: /img/zimply-text-white.svg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
