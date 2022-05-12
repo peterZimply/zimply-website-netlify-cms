@@ -3,7 +3,7 @@ templateKey: index-page
 title: Great coffee with a conscience
 image: /img/homehero.jpg
 logo: /img/coffee-gear.png
-brand: /img/zimply-text-white.svg
+brand: /img/zimply-text-white.png
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
