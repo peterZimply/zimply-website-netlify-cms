@@ -17,6 +17,7 @@ videoSection:
     manuellt.
   title: Automatisera med digitala assistenter
   videoUrl: https://player.vimeo.com/video/598856380?h=cff3e9c2b0&title=0&byline=0&portrait=0
+  buttonText: Boka demo
 logo: /img/zimply-logo-color.png
 intro:
   blurbs:
