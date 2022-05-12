@@ -2,7 +2,7 @@
 templateKey: index-page
 title: Låt våra digitala assistenter hjälpa er när ni inte hinner med!
 image: /img/homehero.jpg
-logo: /img/coffee-gear.png
+logo: /img/zimply-logo-color.png
 brand: /img/zimply-text-white.png
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
