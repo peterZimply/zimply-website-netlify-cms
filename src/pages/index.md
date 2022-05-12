@@ -10,6 +10,13 @@ mainpitch:
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
 brand: /img/zimply-text-white.png
+videoSection:
+  text: Ta tillbaka din tid. Zimply’s digitala assistenter automatiserar det
+    tråkiga jobbet! Våra digitala assistenter automatiserar era tidskrävande
+    arbetsuppgifter - eller de som ni helt enkelt tröttnat på att utföra
+    manuellt.
+  title: Automatisera med digitala assistenter
+  videoUrl: https://player.vimeo.com/video/598856380?h=cff3e9c2b0&title=0&byline=0&portrait=0
 logo: /img/zimply-logo-color.png
 intro:
   blurbs:
