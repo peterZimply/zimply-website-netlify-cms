@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Låt våra digitala assistenter hjälpa er när ni inte hinner med!
 image: /img/homehero.jpg
 logo: /img/coffee-gear.png
 brand: /img/zimply-text-white.png
