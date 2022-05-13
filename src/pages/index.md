@@ -2,6 +2,14 @@
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
+videoSection:
+  text: Ta tillbaka din tid. Zimply’s digitala assistenter automatiserar det
+    tråkiga jobbet! Våra digitala assistenter automatiserar era tidskrävande
+    arbetsuppgifter - eller de som ni helt enkelt tröttnat på att utföra
+    manuellt.
+  title: Automatisera med digitala assistenter
+  videoUrl: https://player.vimeo.com/video/598856380?h=cff3e9c2b0&title=0&byline=0&portrait=0
+  buttonText: Boka demo
 customerSection:
   title: Urval av våra kunder
   customers:
@@ -19,14 +27,10 @@ mainpitch:
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
 brand: /img/zimply-text-white.png
-videoSection:
-  text: Ta tillbaka din tid. Zimply’s digitala assistenter automatiserar det
-    tråkiga jobbet! Våra digitala assistenter automatiserar era tidskrävande
-    arbetsuppgifter - eller de som ni helt enkelt tröttnat på att utföra
-    manuellt.
-  title: Automatisera med digitala assistenter
-  videoUrl: https://player.vimeo.com/video/598856380?h=cff3e9c2b0&title=0&byline=0&portrait=0
-  buttonText: Boka demo
+endSection:
+  title: Vill du veta mer
+  icon: /img/bulb.png
+  buttonText: Kontakta oss
 logo: /img/zimply-logo-color.png
 intro:
   blurbs:
@@ -63,6 +67,12 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+hero:
+  heroBackground: /img/homehero.jpg
+  brand: /img/zimply-text-white.png
+  heroText: Automatisera med digitala assistenter. Få bort tidskrävande arbetsuppgifter
+  heroButtonText: Skapa din assistent
+  textRotator: []
 sellingPoints:
   title: Kom igång
   arrow: /img/favicon-32x32.png
@@ -90,12 +100,6 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
-hero:
-  heroBackground: /img/homehero.jpg
-  brand: /img/zimply-text-white.png
-  heroText: Automatisera med digitala assistenter. Få bort tidskrävande arbetsuppgifter
-  heroButtonText: Skapa din assistent
-  textRotator: []
 image: /img/homehero.jpg
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
