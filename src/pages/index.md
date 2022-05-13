@@ -71,6 +71,8 @@ sellingPoints:
       text: wazzuuup
     - title: yoloswag
       text: sapman
+    - title: Ksskss
+      text: mjau
 title: Låt våra digitala assistenter hjälpa er när ni inte hinner med!
 main:
   heading: Great coffee with no compromises
