@@ -63,6 +63,14 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+sellingPoints:
+  title: Kom igång
+  arrow: /img/favicon-32x32.png
+  points:
+    - title: yoyoyo
+      text: wazzuuup
+    - title: yoloswag
+      text: sapman
 title: Låt våra digitala assistenter hjälpa er när ni inte hinner med!
 main:
   heading: Great coffee with no compromises
