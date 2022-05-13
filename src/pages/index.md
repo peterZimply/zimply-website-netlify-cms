@@ -6,6 +6,7 @@ customerSection:
   title: Urval av våra kunder
   customers:
     - logo: /img/favicon-32x32.png
+    - logo: /img/zimply-logo-color.png
 mainpitch:
   title: Why Kaldi
   description: >
