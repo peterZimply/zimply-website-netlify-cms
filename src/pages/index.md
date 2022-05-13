@@ -4,6 +4,8 @@ subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 customerSection:
   title: Urval av våra kunder
+  customers:
+    - logo: /img/favicon-32x32.png
 mainpitch:
   title: Why Kaldi
   description: >
