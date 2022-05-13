@@ -10,7 +10,7 @@ customerSection:
       size: 20
     - logo: /img/zimply-logo-color.png
       path: /case/acne
-      size: 30
+      size: 50
 mainpitch:
   title: Why Kaldi
   description: >
