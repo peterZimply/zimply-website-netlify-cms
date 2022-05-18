@@ -67,8 +67,9 @@ const StepPoint = (props) => {
   </div>
 }
 
-const Arrow = () => {
-  return <div className="transform-90-deg-on-mobile" style={{ width: '100px' }}><Zoom><img src="/images/arrow-right.svg" alt="arrow" /></Zoom></div>
+const Arrow = (props) => {
+  console.log(props.image.childImageSharp.gatsbyImageData.images.fallback.src)
+  return <div className="transform-90-deg-on-mobile" style={{ width: '100px' }}><Zoom><img src={props.image.childImageSharp.gatsbyImageData.images.fallback.src} alt="arrow" /></Zoom></div>
 }
 
 // eslint-disable-next-line
@@ -80,7 +81,11 @@ export const IndexPageTemplate = ({
   videoUrl,
   videoSectionTitle,
   videoSectionText,
-  videoSectionButtonText
+  videoSectionButtonText,
+  customerSectionTitle,
+  customerSection,
+  sellingPoints,
+  endSection
 
  /* logo,
   brand,
@@ -91,6 +96,9 @@ export const IndexPageTemplate = ({
   description,
   intro,*/
 }) => {
+
+  console.log(endSection)
+
   const heroBg = getImage(heroBackground) || heroBackground;
   const zimplyBrand = getImage(brand) || brand;
 
@@ -149,16 +157,34 @@ export const IndexPageTemplate = ({
       </Section>
 
       <Section background="#f8fcff">
-        <SectionTitle text={<FormattedMessage
+      <SectionTitle text={sellingPoints.title} />
+        {/*<SectionTitle text={<FormattedMessage
           id="home_points_title"
           defaultMessage="Kom igång"
-        />} />
+        />} />*/}
 
 
         <div className="home-points-wrapper" >
 
-          <Slide left>
-            <StepPoint
+
+            {sellingPoints.points.map((point, i) => (
+              <React.Fragment>
+                <Zoom>
+                  <StepPoint
+                    title={point.title}
+                    text={point.text} 
+                  />
+                </Zoom>
+                {i+1 === sellingPoints.points.length ? 
+                  null
+                  :
+                  <Arrow image={sellingPoints.arrow}/>
+                }
+              </React.Fragment>
+            
+              )
+            )}
+            {/*<StepPoint
               title={<FormattedMessage
                 id="home_points_01"
                 defaultMessage="Förenkla ditt arbete"
@@ -190,21 +216,22 @@ export const IndexPageTemplate = ({
               text={<FormattedMessage
                 id="home_points_06"
                 defaultMessage="Nu kan du njuta av att jobba med uppgifter som du tycker om och som är bättre nytta för företaget"
-              />} />
-          </Slide>
+              />} />*/}
+        
         </div>
         <RobotRoll />
       </Section>
 
 
       <Section
-        imageUrl={'/images/section2-bg.png'}
-        imageUrlMobile={'/images/mobile-sections/grey-section-mobile.png'}>
+        imageUrl={'/img/section2-bg.png'}
+        imageUrlMobile={'/img/grey-section-mobile.png'}>
         <SectionTitle text={<FormattedMessage
           id="title2"
           defaultMessage="Urval av våra kunder"
         />} />
-        <Customers marginBottom />
+          
+        <Customers customers={customerSection.customers} marginBottom />
         {/*<MainButton to="/case/svea" text={<FormattedMessage
           id="seeCustomers"
           defaultMessage="Se våra kunder"
@@ -229,7 +256,7 @@ export const IndexPageTemplate = ({
     `}
 
         >
-          <MiddleSquare imageUrl='url(/images/pink1.webp)'>
+          <MiddleSquare imageUrl='url(/img/pink1.webp)'>
             <InnerMiddleSquare to="/about" title={<FormattedMessage
               id="about"
               defaultMessage="Om oss"
@@ -238,7 +265,7 @@ export const IndexPageTemplate = ({
               defaultMessage="Vi utbildar och hyr ut digitala assistenter som hjälper er att få bort monotona och repetitiva arbetsuppgifter"
             />} />
           </MiddleSquare>
-          <MiddleSquare imageUrl='url(/images/office2.webp)' />
+          <MiddleSquare imageUrl='url(/img/office2.webp)' />
         </div>
       </section>
 
@@ -255,8 +282,8 @@ export const IndexPageTemplate = ({
     `}
 
         >
-          <MiddleSquare imageUrl='url(/images/office1.webp)' />
-          <MiddleSquare imageUrl='url(/images/pink2.webp)'>
+          <MiddleSquare imageUrl='url(/img/office1.webp)' />
+          <MiddleSquare imageUrl='url(/img/pink2.webp)'>
             <InnerMiddleSquare to="/career" title={<FormattedMessage
               id="career"
               defaultMessage="Karriär"
@@ -289,13 +316,19 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <EndSection to="/contact" title={<FormattedMessage
+      <EndSection to="/contact" title={endSection.title} /*title={<FormattedMessage
         id="learnmore"
         defaultMessage="Vill du veta mer"
-      />} buttonText={<FormattedMessage
+      />}*/
+      icon={endSection.icon}
+      buttonText={endSection.buttonText}
+      iconUrl={endSection.icon.childImageSharp.gatsbyImageData.images.fallback.src}
+      
+      /*buttonText={<FormattedMessage
         id="contact"
         defaultMessage="Kontakta oss"
-      />} />
+      />}*/ 
+      />
 
     </div>
     /*<div>
@@ -360,6 +393,22 @@ IndexPageTemplate.propTypes = {
   videoSectionTitle: PropTypes.string,
   videoSectionText: PropTypes.string,
   buttonText: PropTypes.string,
+  customerSectionTitle: PropTypes.string,
+  customerSection: PropTypes.shape({
+    customers: PropTypes.array,
+    size: PropTypes.number,
+    path: PropTypes.string
+  }),
+  sellingPoints: PropTypes.shape({
+    title: PropTypes.string,
+    arrow: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    points: PropTypes.array,
+  }),
+  endSection: PropTypes.shape({
+    title: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    buttonText: PropTypes.string,
+  }),
  /* 
   mainpitch: PropTypes.object,
   description: PropTypes.string,
@@ -382,6 +431,10 @@ const IndexPage = ({ data }) => {
         videoSectionTitle={frontmatter.videoSection.title}
         videoSectionText={frontmatter.videoSection.text}
         videoSectionButtonText={frontmatter.videoSection.buttonText}
+        customerSectionTitle={frontmatter.customerSection.title}
+        customerSection={frontmatter.customerSection}
+        sellingPoints={frontmatter.sellingPoints}
+        endSection={frontmatter.endSection}
       />
     </Layout>
   );
@@ -419,6 +472,39 @@ export const pageQuery = graphql`
           videoUrl
           title
           text
+          buttonText
+        }
+        customerSection {
+          title
+          customers {
+            logo {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              }
+            }
+            path
+            size
+          }
+        }
+        sellingPoints {
+          title
+          arrow {
+            childImageSharp {
+              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+            }
+          }
+          points {
+            title
+            text
+          }
+        }
+        endSection {
+          title
+          icon {
+            childImageSharp {
+              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+            }
+          }
           buttonText
         }
       }

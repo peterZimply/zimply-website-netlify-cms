@@ -7,8 +7,8 @@ import Zoom from 'react-reveal/Zoom';
 
 const EndSection = (props) => (
     <Section
-        imageUrl={'/images/section3-bg.png'}
-        imageUrlMobile={'/images/mobile-sections/white-section-mobile-end2.png'}
+        imageUrl={'/img/section3-bg.png'}
+        imageUrlMobile={'/img/white-section-mobile-end2.png'}
         extraMargin="-50px"
         extraMarginMobile="-18px"
         bigPadding

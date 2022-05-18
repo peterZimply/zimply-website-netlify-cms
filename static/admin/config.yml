@@ -89,25 +89,59 @@ collections:
             }
 
           - {
-              label: Intro,
-              name: intro,
+              label: Selling points section,
+              name: sellingPoints,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Title, name: title, widget: string },
+                  { label: Arrow, name: arrow, widget: image },
                   {
-                    label: Blurbs,
-                    name: blurbs,
+                    label: Points,
+                    name: points,
                     widget: list,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
+                        { label: Title, name: title, widget: string },
                         { label: Text, name: text, widget: text },
                       ],
                   },
                 ],
             }
+
+          - {
+              label: Customer Section,
+              name: customerSection,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Customers,
+                    name: customers,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Logo, name: logo, widget: image },
+                        { label: Path, name: path, widget: string },
+                        { label: Size, name: size, widget: number },
+                      ],
+                  },
+                ],
+            }
+
+          - {
+              label: End Section,
+              name: endSection,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Icon, name: icon, widget: image },
+                  { label: Button text, name: buttonText, widget: string },
+                ],
+            }
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

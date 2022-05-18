@@ -47,15 +47,18 @@ const Customers = (props) => (
         <Fade top duration={2000} delay={800} distance="30px">
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
-                <Customer2 height="20%" imageUrl="/images/customers/svea.png" link="/case/svea" small={props.small} />
+                {props.customers.map((customer) => (
+                     <Customer2 height={`${customer.size}%`} imageUrl={customer.logo.childImageSharp.gatsbyImageData.images.fallback.src} link={customer.path} small={props.small} />
+                ))}
+                {/*<Customer2 height="20%" imageUrl="/images/customers/svea.png" link="/case/svea" small={props.small} />
                 <Customer2 height="25%" imageUrl="/images/customers/dina2.png" link="/case/dina" small={props.small}/>
                 <Customer2 height="30%" imageUrl="/images/customers/zimply_sbb_logo.webp" link="/case/sbb" small={props.small}/>
-                {/* <Customer height="27px" imageUrl="/images/customers/futurpension.png" noOpacity /> */}
                 <Customer2 height="10%" imageUrl="/images/customers/acne.svg" link="/case/acne" small={props.small}/>
                 <Customer2 height="22%" imageUrl="/images/customers/wise.png" link="/case/wise" small={props.small}/>
                 <Customer2 height="12%" imageUrl="/images/customers/futur2.png" link="/case/futurpension" small={props.small}/>
                 <Customer2 height="23%" imageUrl="/images/customers/froda.png" link="/" small={props.small}/>
-                <Customer2 height="34%" imageUrl="/images/customers/kronleins.png" link="/" small={props.small}/>
+                <Customer2 height="34%" imageUrl="/images/customers/kronleins.png" link="/" small={props.small}/>/*}
+                {/* <Customer height="27px" imageUrl="/images/customers/futurpension.png" noOpacity /> */}
             </div>
         </Fade>
 
