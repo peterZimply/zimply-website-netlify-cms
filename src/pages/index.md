@@ -1,25 +1,25 @@
 ---
 hero:
   heroBackground: /img/blog-index.jpg
-  brand: /img/zimply-text-white.png
+  brand: /img/favicon-16x16.png
   textRotator:
-    - text1: srg
-      text2: srh
-      text3: srsh
-  heroText: hero text cmss
-  heroButtonText: srh
+    - text1: a
+      text2: b
+      text3: c
+  heroText: hhhh
+  heroButtonText: hhhh
 videoSection:
-  videoUrl: google.com
-  title: sehh
-  text: segsg
-  buttonText: drh
+  videoUrl: http://google.com
+  title: tttt
+  text: ttttt
+  buttonText: ttt
 sellingPoints:
-  title: tttttt
+  title: srhsrh
   arrow: /img/favicon-16x16.png
 customerSection:
-  title: vvv
+  title: srhdrh
 endSection:
-  title: vvv
-  buttonText: vvvv
-  icon: /img/favicon-32x32.png
+  title: etdj
+  icon: /img/favicon-16x16.png
+  buttonText: ftykfgyk
 ---
