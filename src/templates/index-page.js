@@ -450,7 +450,8 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
+export const pageQuery = (
+  1==2 ? graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
@@ -510,4 +511,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+` : null)
