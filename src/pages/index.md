@@ -16,8 +16,19 @@ videoSection:
 sellingPoints:
   title: srhsrh
   arrow: /img/favicon-16x16.png
+  points:
+    - title: ppp
+      text: ssrh
+    - text: srhsrj
+      title: pppp
+    - title: pp
+      text: guguk
 customerSection:
   title: srhdrh
+  customers:
+    - logo: /img/favicon-16x16.png
+      path: /goo
+      size: 52
 endSection:
   title: etdj
   icon: /img/favicon-16x16.png
