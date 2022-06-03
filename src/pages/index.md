@@ -14,7 +14,7 @@ videoSection:
   text: segsg
   buttonText: drh
 sellingPoints:
-  title: bbfr
+  title: tttttt
   arrow: /img/favicon-16x16.png
 customerSection:
   title: vvv
