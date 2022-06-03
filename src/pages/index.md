@@ -1,6 +1,6 @@
 ---
 hero:
-  heroBackground: /img/homehero.jpg
+  heroBackground: /img/chemex.jpg
   brand: /img/zimply-text-white.png
   textRotator:
     - text1: srg
