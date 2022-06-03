@@ -6,7 +6,7 @@ hero:
     - text1: srg
       text2: srh
       text3: srsh
-  heroText: aseghs
+  heroText: hero text cms
   heroButtonText: srh
 videoSection:
   videoUrl: google.com
